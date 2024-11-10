@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: node-app  # Add a unique name for the container
-        image: simransar/failover-node-app:latest
+        image: failover-node-app
         ports:
         - containerPort: 3000
         readinessProbe:
