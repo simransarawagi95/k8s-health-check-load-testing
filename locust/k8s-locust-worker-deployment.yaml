@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: locust-worker
-          image: simransar/locust-load-tester:latest
+          image: locust-load-tester
           args: ["--worker", "--master-host=locust-master", "--master-port=5557"]  # Ensure this matches your master service name
           resources:                             # Define resource requests and limits
             requests:
