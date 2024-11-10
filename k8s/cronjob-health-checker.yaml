@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: health-checker
-            image: simransar/health-checker:latest
+            image: health-checker
             imagePullPolicy: Always
             args: ["python", "health_checker.py"]
           restartPolicy: OnFailure
