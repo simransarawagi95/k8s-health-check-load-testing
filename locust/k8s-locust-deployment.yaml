@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: locust-master
-          image: simransar/locust-load-tester:latest
+          image: locust-load-tester
           args: ["--master"]
           ports:
             - name: loc-master-web
