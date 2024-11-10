@@ -1,3 +1,18 @@
+# Node.js
 node_modules/
-__pycache__/
-*.log
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+
+# Docker
+*.docker
+
+# Kubernetes
+*.kube
+
+# IDEs
+.vscode/
+.idea/
