@@ -21,6 +21,7 @@ The system's failover behavior is tested by scaling down pods.
    ```bash
    git clone https://github.com/yourusername/k8s-health-check-load-testing.git
    cd k8s-health-check-load-testing
+   
 2. **Set up the Kubernetes cluster**:
     Ensure that your Kubernetes cluster is running and configured. You can use Minikube, Kind, or any Kubernetes provider.
    ```bash
@@ -93,7 +94,7 @@ The system's failover behavior is tested by scaling down pods.
    ```bash
    kubectl get endpoints node-app-primary-service
 
-3.**Observe Locust Logs**:
+3. **Observe Locust Logs**:
    Once the primary deployment is scaled down, Locust should automatically start routing traffic to the available pods in the secondary and failover deployments. To observe this behavior, check the Locust logs. You can monitor the traffic distribution by watching the Locust logs as it sends traffic to healthy pods:
    ```bash
     kubectl port-forward service/locust-master 8089:8089
