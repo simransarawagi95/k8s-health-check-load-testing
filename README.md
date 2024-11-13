@@ -31,20 +31,27 @@ The system's failover behavior is tested by scaling down pods.
     You need to build Docker images for both the Node.js app, the Python health checker and the locust load tester.
     For Node.js app:
    ```bash
-    docker build -t failover-node-app:latest ./app
+    docker build -t failover-node-app:local ./app
    ```
 
     For the health checker:
     ```bash
-    docker build -t health-checker:latest ./health_checker
+    docker build -t health-checker:local ./health_checker
     ```
 
     For Locust:
     ```bash
-    docker build -t locust-load-tester:latest ./locust
+    docker build -t locust-load-tester:local ./locust
     ```
 
-4. **Deploy to Kubernetes**:
+4. **Load Image to Kind**:
+   ```bash
+   kind load docker-image failover-node-app:local --name failover-cluster
+   kind load docker-image health-checker:local --name failover-cluster
+   kind load docker-image locust-load-tester:local --name failover-cluster
+
+
+5. **Deploy to Kubernetes**:
     Apply the Kubernetes deployment files for primary, secondary, and failover services:
    ```bash
     kubectl apply -f k8s/deployment-primary.yaml              
@@ -70,13 +77,13 @@ The system's failover behavior is tested by scaling down pods.
     kubectl apply -f locust/k8s-locust-worker-deployment.yaml
    ```
 
-5. **Check the services and pods**:
+6. **Check the services and pods**:
    ```bash
     kubectl get svc
     kubectl get pods
    ```
 
-6. **Start Locust**:
+7. **Start Locust**:
    ```bash
     kubectl port-forward service/locust-master 8089:8089
    ```
