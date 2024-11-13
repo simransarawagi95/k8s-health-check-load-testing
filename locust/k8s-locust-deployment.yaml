@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: locust-master
-          image: locust-load-tester:latest
+          image: locust-load-tester:local
+          imagePullPolicy: Never
           args: ["--master"]
           ports:
             - name: loc-master-web
