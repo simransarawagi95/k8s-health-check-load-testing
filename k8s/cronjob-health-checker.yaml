@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: health-checker
-            image: health-checker:latest
-            imagePullPolicy: Always
+            image: health-checker:local
+            imagePullPolicy: Never
             args: ["python", "health_checker.py"]
           restartPolicy: OnFailure
