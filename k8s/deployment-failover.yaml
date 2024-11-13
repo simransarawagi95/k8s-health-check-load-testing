@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: node-app  # Add a unique name for the container
-        image: failover-node-app
+        image: failover-node-app:latest
         ports:
         - containerPort: 3000
         readinessProbe:
