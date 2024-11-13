@@ -19,7 +19,7 @@ The system's failover behavior is tested by scaling down pods.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/k8s-health-check-load-testing.git
+   git clone https://github.com/simransarawagi95/k8s-health-check-load-testing.git
    cd k8s-health-check-load-testing
    
 2. **Set up the Kubernetes cluster**:
